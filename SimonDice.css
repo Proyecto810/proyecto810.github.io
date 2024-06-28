@@ -1,0 +1,187 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url('img/lu11.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 76%, rgba(0,0,0,1) 100%);
+    border-radius: 20px;
+    box-shadow: 0 20 30px rgba(0, 0, 0, 0.3); 
+    padding: 20px;
+    border: 2px solid #000000;
+    max-width: 90%;
+    margin: 20px;
+}
+
+#colors {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.color {
+    width: 100px;
+    height: 100px;
+    border: 2px solid #000;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.1s ease, box-shadow 0.1s ease;
+}
+
+#color1 { 
+    background-color: #ff0000;
+    background-image: url('img/2.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#color2 { 
+    background-color: #d9730d;
+    background-image: url('img/6.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#color3 { 
+    background-color: #f8f804;
+    background-image: url('img/11.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#color4 { 
+    background-color: #2b00ff;
+    background-image: url('img/4.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#color5 { 
+    background-color: #00ff00;
+    background-image: url('img/5.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#color6 { 
+    background-color: #ff009d;
+    background-image: url('img/1.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#color7 { 
+    background-color: #00ffff;
+    background-image: url('img/7.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#color8 { 
+    background-color: #0080ff;
+    background-image: url('img/3.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+#color9 { 
+    background-color: #8000ff;
+    background-image: url('img/10.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.color.active {
+    transform: scale(1.2);
+    opacity: 0.6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.color.clicked {
+    transform: scale(1.2);
+    box-shadow: 0 20 30px rgba(0, 0, 0, 0.5);
+    background-color: white;
+    opacity: 0.7;
+}
+
+#controls {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap; /* Para que los botones se ajusten en pantallas pequeñas */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: rgb(61,37,237);
+    background: linear-gradient(0deg, rgba(61,37,237,1) 0%, rgba(222,10,128,1) 100%);
+    color: white;
+    transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    background: rgb(241,89,174);
+    background: linear-gradient(0deg, rgba(241,89,174,1) 0%, rgba(108,90,245,1) 100%);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3); 
+}
+
+/* Media Queries para Responsividad */
+
+/* Dispositivos con ancho menor a 768px */
+@media (max-width: 768px) {
+    #colors {
+        grid-template-columns: repeat(3, 80px);
+        grid-template-rows: repeat(3, 80px);
+    }
+
+    .color {
+        width: 80px;
+        height: 80px;
+    }
+
+    button {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+}
+
+/* Dispositivos con ancho menor a 480px */
+@media (max-width: 480px) {
+    #colors {
+        grid-template-columns: repeat(3, 60px);
+        grid-template-rows: repeat(3, 60px);
+    }
+
+    .color {
+        width: 60px;
+        height: 60px;
+    }
+
+    button {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    #game-container {
+        padding: 10px;
+    }
+}
